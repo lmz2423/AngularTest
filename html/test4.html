@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>模型对象</title>
+</head>
+<body ng-controller="TextController">
+<p>{{someText.message}}</p>
+<p ng-bind="someText.message"></p>
+
+<form action="" ng-controller="SomeController">
+    <input type="checkbox" ng-modle="youCheckedIt"/>
+    <p ng-bind="youCheckedIt"></p>
+</form>
+<form action="" ng-controller="startUpController">
+    Starting:<input  ng-model="funding.startingEstimate">
+    Recommendation:{{needed}}
+</form>
+<script type="text/javascript" src="../js/angular1-08.js"></script>
+<script type="text/javascript" src="../js/controllMode.js"></script>
+</body>
+</html>

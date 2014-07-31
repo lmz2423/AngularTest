@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <meta name="viewport" content="width=device-width">
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
-<div ng-app>{{3*3}}</div>
+<body ng-app>
+<div ng-controller="HelloController">
+
+</div>
+<input  ng-model="greeting.text"/>
+<input  ng-model="greeting.text"/>
+<p>{{greeting.text}},World</p>
 <script type="text/javascript" src="../js/angular1-08.js"></script>
+<script type="text/javascript" src="../js/controllers.js"></script>
 </body>
 
 </html>
