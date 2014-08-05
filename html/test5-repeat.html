@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="myrepeat">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ng-repeat测试</title>
+</head>
+<body>
+<ul ng-controller="studentListController">
+    <li ng-repeat="student in students">
+        <a href='/{{student.name}}/view/{{student.id}}'>{{student.name}}</a>
+    </li>
+</ul>
+<button ng-click='insertTom()'>Insert</button>
+<script src="../js/angular1-08.js"></script>
+<script src="../js/ng-repeat.js">
+</script>
+</body>
+</html>
