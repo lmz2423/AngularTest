@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ng-class测试</title>
+    <style type="text/css">
+        .error {
+            background-color: red;
+        }
+
+        .warning {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="HeaderController">
+    <div ng-class="{error:isError,warning:isWarning}">{{messageText}}</div>
+    <button ng-click="showError()">错误</button>
+    <button ng-click="showWarning()">警告</button>
+</div>
+<script type="text/javascript" src="../js/angular1-08.js"></script>
+<script type="text/javascript">
+    function HeaderController($scope) {
+        $scope.isError = false;
+        $scope.isWarning = false;
+
+        $scope.showError = function(){
+            $scope.messageText = 'This is an error!';
+            $scope.isError = true;
+            $scope.isWarning = false;
+        };
+
+        $scope.showWarning = function(){
+            $scope.messageText = 'Just a warning. Please carry on.';
+            $scope.isWarning = true;
+            $scope.isError = false;
+        };
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>angular选中的行高亮测试</title>
+    <style type="text/css">
+
+        .selected {
+            background-color: lightgreen;
+        }
+        table{
+            margin:  40px auto;
+            border-collapse: collapse;
+            border: 1px solid darkgray;
+        }
+        th{
+            background-color: powderblue;
+        }
+        tr:nth-child(2n+1){
+            background-color: mistyrose;
+        }
+        tr:hover{
+            background-color: orange;
+        }
+        th,td{
+            width: 120px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+<table ng-controller="RestaurantTableController">
+    <thead>
+    <tr>
+        <th>银行</th>
+        <th>日额度</th>
+        <th>月额度</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--使用ng-app来进行重复操作-->
+    <tr ng-repeat="restaurant in directory" ng-click ='selectRestaurant($index)' ng-class="{selected:$index==selectedRow}">
+        <td>{{restaurant.name}}</td>
+        <td>{{restaurant.LimitOfOnce}}</td>
+        <td>{{restaurant.LimitOfMonth}}</td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/javascript" src="../js/angular1-08.js"></script>
+<script type="text/javascript">
+   var BankConfig =[
+       {name:'工商银行',LimitOfOnce:2000,LimitOfMonth:2000},
+       {name:'招商银行',LimitOfOnce:50000,LimitOfMonth:5000},
+       {name:'农业银行',LimitOfOnce:5000,LimitOfMonth:20000},
+       {name:'北京银行',LimitOfOnce:2000,LimitOfMonth:"无限额"},
+       {name:'建设银行',LimitOfOnce:3000,LimitOfMonth:10000},
+       {name:'中国银行',LimitOfOnce:3000,LimitOfMonth:60000}
+   ];
+   function RestaurantTableController($scope){
+        $scope.directory = BankConfig;
+        $scope.selectRestaurant = function(row){
+            $scope.selectedRow = row;
+        }
+   }
+</script>
+</body>
+</html>
