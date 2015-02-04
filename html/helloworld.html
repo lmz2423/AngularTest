@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="keywords" content=""/>
+    <meta name="Description" content=""/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <script type="text/javascript" src="../js/angular1-08.js"></script>
+    <title>HelloWorld测试</title>
+</head>
+<body ng-app ng-init="name='world'">
+<div>
+    <h3>{{name}}</h3>
+</div>
+<div ng-controller="kk.HelloCtrl">
+    Say hello to: <input type="text" ng-model="name"><br/>
+    <h1>Hello, {{getName()}}</h1>
+    <h1>Hello，{{name}}</h1>
+</div>
+<h3>{{name}}</h3>
+<ul ng-controller="kk.WorldCtrl">
+    <li ng-repeat="country in countries">
+        {{country.name}} has population of {{country.population}},{{worldPercentage(country.population)}} % of the World's population
+    </li>
+    <hr/>
+    World's {{population}} millions
+</ul>
+<script src="../js/HelloWorld.js"></script>
+</body>
+</html>

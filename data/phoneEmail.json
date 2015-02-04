@@ -1,0 +1,22 @@
+{
+  "information": [
+    {
+      "age": 13,
+      "id": "motorala-defy-width-motobluar",
+      "name": "Motoral DFF",
+      "snippet": "Are you ready for everything life throws your way?"
+    },
+    {
+      "age":14,
+      "id":"xiaomi",
+      "name":"xiaomi-4s",
+      "snippet":"小米垃圾"
+    },
+    {
+      "age":15,
+      "id":"iphone6",
+      "name":"16G iphone7",
+      "snippet":"Do you like using iphone"
+    }
+  ]
+}

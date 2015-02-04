@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="xhrJson">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="keywords" content=""/>
+    <meta name="Description" content=""/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <title>xhr和依赖注入</title>
+    <style type="text/css">
+        .row {
+            line-height: 40px;
+            font-family: "Bitstream Vera Serif Bold", serif;
+            font-weight: 700;
+            height: 40px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-indent: 30px;
+            font-size: 15px;
+        }
+
+        .row:nth-of-type(odd) {
+            display: block;
+            background: red;
+        }
+
+        .row:nth-of-type(even) {
+            display: block;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="PhoneListCtrl">
+    <p ng-repeat="phoneList in phone.information">
+        <span class="row">{{phoneList.age | json}}</span>
+        <span class="row">{{phoneList.id | json}}</span>
+        <span class="row">{{phoneList.name | json}}</span>
+        <span class="row">{{phoneList.snippet | json}}</span>
+    </p>
+</div>
+<div ng-view></div>
+</body>
+<script type="text/javascript" src="../js/angular1-08.js"></script>
+<script type="text/javascript" src="../js/xhrAndJson.js"></script>
+</html>
