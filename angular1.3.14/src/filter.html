@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="FilterTest">
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="keywords" content=""/>
+    <meta name="Description" content=""/>
+    <meta name="renderer" content="webkit">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>过滤器</title>
+    <script type="text/javascript" src="js/framework/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="FilterController">
+    {{time.today | date:'yyyy'}}
+    <p>{{time.kk | filter:'e'}}</p>
+
+    <p>{{time}}</p>
+    {{12312344 | currency:}}
+</div>
+</body>
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        angular.module('FilterTest', [])
+                .controller('FilterController', ["$scope",
+                    function ($scope) {
+                        $scope.time = {};
+                        $scope.time.today = new Date();
+                        $scope.time.kk = ['Ari', 'Lerner', 'Likes', 'To', 'Eat'];
+                    }]);
+    }());
+</script>
+</html>

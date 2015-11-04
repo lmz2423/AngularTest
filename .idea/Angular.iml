@@ -8,5 +8,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jQuery-2.0.0" level="application" />
     <orderEntry type="library" name="Angular1.08" level="project" />
+    <orderEntry type="library" name="angular" level="application" />
   </component>
 </module>
