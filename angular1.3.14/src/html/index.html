@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="carNiu">
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="keywords" content=""/>
+    <meta name="Description" content=""/>
+    <meta name="renderer" content="webkit">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <title>额度预估</title>
+    <script type="text/javascript" src="../js/framework/angular.min.js"></script>
+    <script type="text/javascript" src="../js/framework/angular-route.min.js"></script>
+</head>
+<div ng-view></div>
+</body>
+<script type="text/javascript">
+    var routeTest = angular.module('carNiu', ['ngRoute']);
+    routeTest.config(["$routeProvider", function ($routeProvider) {
+        $routeProvider
+                .when('/', {
+                    templateUrl: 'template/home.html',
+                    controller: 'mainController'
+                })
+                .when('/about', {
+                    templateUrl: 'template/about.html',
+                    controller: "aboutController"
+                })
+                .when('/contact', {
+                    templateUrl: "template/contact.html",
+                    controller: "contactController"
+                });
+    }]);
+    routeTest.controller('mainController', ["$scope","$http",function ($scope,$http) {
+
+        $scope.message = "Everyone come and see how good I look!";
+    }]);
+    routeTest.controller('aboutController', ["$scope", function ($scope) {
+        $scope.message = "EveryOne come and see how good I loossdfak!";
+    }]);
+    routeTest.controller('contactController', ["$scope",function ($scope) {
+        $scope.message = "Contact us! JK. This  is just a demo.";
+    }]);
+
+</script>
+</html>
